@@ -1,1 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Burns | Portfolio</title>
+
+```
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        background:white;
+        overflow-x:hidden;
+    }
+
+    /* ---------------- HEADER ---------------- */
+
+    header{
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:1000;
+        background:rgba(0,0,0,0.75);
+        backdrop-filter:blur(8px);
+    }
+
+    nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:25px;
+        padding:15px;
+    }
+
+    nav a,
+    .dropdown-btn{
+        color:white;
+        text-decoration:none;
+        cursor:pointer;
+        font-size:1rem;
+        transition:.3s;
+    }
+
+    nav a:hover,
+    .dropdown-btn:hover{
+        color:#00bfff;
+    }
+
+    /* ---------------- DROPDOWN ---------------- */
+
+    .dropdown{
+        position:relative;
+    }
+
+    .dropdown-content{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        min-width:240px;
+        background:white;
+        border-radius:8px;
+        overflow:hidden;
+        box-shadow:0 0 20px rgba(0,0,0,.15);
+    }
+
+    .dropdown:hover .dropdown-content{
+        display:block;
+    }
+
+    .dropdown-content a{
+        color:black;
+        display:block;
+        padding:12px;
+    }
+
+    .dropdown-content a:hover{
+        background:#f2f2f2;
+    }
+
+    .dropdown-header{
+        font-weight:bold;
+        padding:10px;
+        background:#ececec;
+        color:#333;
+    }
+
+    .divider{
+        border-top:1px solid #ddd;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero{
+        height:100vh;
+        background-image:url("images/hero.jpg");
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        color:white;
+        position:relative;
+    }
+
+    .hero::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.45);
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:1;
+    }
+
+    .hero h1{
+        font-size:4rem;
+        margin-bottom:15px;
+    }
+
+    .hero p{
+        font-size:1.4rem;
+    }
+
+    /* ---------------- SECTIONS ---------------- */
+
+    section{
+        padding:100px 10%;
+        background:white;
+    }
+
+    h2{
+        font-size:2.5rem;
+        margin-bottom:40px;
+        text-align:center;
+    }
+
+    /* ---------------- ABOUT ---------------- */
+
+    .about-container{
+        display:flex;
+        gap:50px;
+        align-items:center;
+        flex-wrap:wrap;
+    }
+
+    .about-image{
+        flex:1;
+        min-width:250px;
+    }
+
+    .about-image img{
+        width:100%;
+        border-radius:15px;
+    }
+
+    .about-text{
+        flex:2;
+        min-width:300px;
+        font-size:1.1rem;
+        line-height:1.8;
+    }
+
+    /* ---------------- PROJECTS ---------------- */
+
+    .project-category{
+        margin-top:70px;
+    }
+
+    .project-category h3{
+        margin-bottom:30px;
+        font-size:1.8rem;
+        border-bottom:3px solid #ddd;
+        padding-bottom:10px;
+    }
+
+    .project-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+        gap:30px;
+    }
+
+    .project-card{
+        background:white;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+        transition:.3s;
+    }
+
+    .project-card:hover{
+        transform:translateY(-5px);
+    }
+
+    .project-card img{
+        width:100%;
+        height:220px;
+        object-fit:cover;
+    }
+
+    .project-info{
+        padding:20px;
+    }
+
+    .project-info h4{
+        margin-bottom:10px;
+    }
+
+    .project-info p{
+        margin-bottom:20px;
+    }
+
+    .project-btn{
+        background:#0077ff;
+        color:white;
+        text-decoration:none;
+        padding:10px 20px;
+        border-radius:6px;
+    }
+
+    .project-btn:hover{
+        background:#0059bf;
+    }
+
+    /* ---------------- ANIMATIONS ---------------- */
+
+    .hidden{
+        opacity:0;
+        transform:translateY(80px);
+        transition:all 1s ease;
+    }
+
+    .show{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media(max-width:768px){
+
+        .hero h1{
+            font-size:2.5rem;
+        }
+
+        nav{
+            flex-wrap:wrap;
+        }
+
+        .about-container{
+            flex-direction:column;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+
+```
+<nav>
+
+    <a href="https://github.com/YOUR_USERNAME">GitHub</a>
+
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN">
+        LinkedIn
+    </a>
+
+    <a href="resume.pdf" download>
+        Resume
+    </a>
+
+    <div class="dropdown">
+
+        <span class="dropdown-btn">
+            Projects ▼
+        </span>
+
+        <div class="dropdown-content">
+
+            <div class="dropdown-header">
+                Professional
+            </div>
+
+            <a href="projects/epic.html">
+                ePIC Detector
+            </a>
+
+            <a href="projects/fusion.html">
+                Fusion Research
+            </a>
+
+            <div class="divider"></div>
+
+            <div class="dropdown-header">
+                Personal
+            </div>
+
+            <a href="projects/mira.html">
+                MIRA Game
+            </a>
+
+            <a href="projects/project2.html">
+                Project 2
+            </a>
+
+        </div>
+    </div>
+
+    <div class="dropdown">
+
+        <span class="dropdown-btn">
+            Contact ▼
+        </span>
+
+        <div class="dropdown-content">
+
+            <a>Email: your@email.com</a>
+
+            <a>Phone: (555) 555-5555</a>
+
+            <a>Location: Massachusetts, USA</a>
+
+        </div>
+
+    </div>
+
+</nav>
+```
+
+</header>
+
+<section class="hero">
+
+```
+<div class="hero-content">
+
+    <h1>Nathan Burns</h1>
+
+    <p>
+        Physics Student | Researcher | Developer
+    </p>
+
+</div>
+```
+
+</section>
+
+<section id="about" class="hidden">
+
+```
+<h2>About Me</h2>
+
+<div class="about-container">
+
+    <div class="about-image">
+        <img src="images/me.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="about-text">
+
+        <p>
+
+            Replace this with your biography. Talk about
+            your education, research, programming experience,
+            interests, and career goals.
+
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="projects" class="hidden">
+
+```
+<h2>Projects</h2>
+
+<div class="project-category">
+
+    <h3>Professional Projects</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <img src="images/project1.jpg">
+
+            <div class="project-info">
+
+                <h4>ePIC Calorimeter Research</h4>
+
+                <p>
+                    Short project description goes here.
+                </p>
+
+                <a class="project-btn"
+                   href="projects/epic.html">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="images/project2.jpg">
+
+            <div class="project-info">
+
+                <h4>Fusion Research</h4>
+
+                <p>
+                    Short project description goes here.
+                </p>
+
+                <a class="project-btn"
+                   href="projects/fusion.html">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="project-category">
+
+    <h3>Personal Projects</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <img src="images/project3.jpg">
+
+            <div class="project-info">
+
+                <h4>MIRA</h4>
+
+                <p>
+                    Turn-based strategy game in Unity.
+                </p>
+
+                <a class="project-btn"
+                   href="projects/mira.html">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="images/project4.jpg">
+
+            <div class="project-info">
+
+                <h4>Project Name</h4>
+
+                <p>
+                    Short project description goes here.
+                </p>
+
+                <a class="project-btn"
+                   href="projects/project2.html">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".hidden")
+.forEach((el)=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
 
