@@ -237,6 +237,47 @@
         background:#0059bf;
     }
 
+
+    /* ---------------- ACCOLADES ---------------- */
+
+    .accolades-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+        gap:30px;
+        margin-top:40px;
+    }
+    
+    .accolade-card{
+        text-align:center;
+        background:white;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+        transition:.3s;
+    }
+    
+    .accolade-card:hover{
+        transform:translateY(-5px);
+    }
+    
+    .accolade-card img{
+        width:100%;
+        height:220px;
+        object-fit:cover;
+    }
+    
+    .accolade-info{
+        padding:20px;
+    }
+    
+    .accolade-info h3{
+        margin-bottom:10px;
+    }
+    
+    .accolade-info p{
+        line-height:1.5;
+    }
+
     /* ---------------- ANIMATIONS ---------------- */
 
     .hidden{
@@ -314,6 +355,8 @@
             <a href="projects/project2.html">
                 Project 2
             </a>
+            <a href="#accolades">
+                Accolades</a>
 
         </div>
     </div>
@@ -499,6 +542,68 @@
     </div>
 
 </div>
+
+    <section id="accolades" class="hidden">
+
+    <h2>Accolades</h2>
+
+    <div class="accolades-grid">
+
+        <div class="accolade-card">
+
+            <img src="images/accolade1.jpg"
+                 alt="Award 1">
+
+            <div class="accolade-info">
+
+                <h3>Research Fellowship</h3>
+
+                <p>
+                    Brief description of the award,
+                    scholarship, internship, or honor.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="accolade-card">
+
+            <img src="images/accolade2.jpg"
+                 alt="Award 2">
+
+            <div class="accolade-info">
+
+                <h3>Conference Presentation</h3>
+
+                <p>
+                    Short description that can be edited.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="accolade-card">
+
+            <img src="images/accolade3.jpg"
+                 alt="Award 3">
+
+            <div class="accolade-info">
+
+                <h3>Academic Achievement</h3>
+
+                <p>
+                    Short description that can be edited.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 ```
 
 </section>
