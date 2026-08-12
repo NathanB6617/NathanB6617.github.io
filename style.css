@@ -361,37 +361,57 @@
    }
 
 
-   /*---------- DOWNLOADS ---------- */
-   
-   .downloads{
-   text-align;
-   }
-   
-   .download-buttons{
-   margin-top:30px;
-   display;
-   justify-content;
-   gap:20px;
-   flex-wrap;
-   }
-   
-   .download-btn{
-   background:#0077ff;
-   color;
-   text-decoration;
-   padding:15px 25px;
-   border-radius:8px;
-   transition:.3s;
-   }
-   
-   .download-btn
+/* ---------- RESEARCH SECTIONS ---------- */
+
+.research-section{
+    width:100%;
+    max-width:none;
+    margin:0;
+}
+
+.research-text{
+    width:100%;
+}
+
+.research-text p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
 
 
-/* ---------------- RESEARCH IMAGE GALLERY ---------------- */
+/* ---------- DOWNLOADS ---------- */
 
-   .research-gallery{
+.downloads{
+    text-align:center;
+}
+
+.download-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.download-btn{
+    background:#0077ff;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.download-btn:hover{
+    background:#0059bf;
+}
+
+
+/* ---------- RESEARCH IMAGE GALLERY ---------- */
+
+.research-gallery{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:30px;
     margin-top:35px;
     width:100%;
@@ -418,7 +438,8 @@
     line-height:1.4;
 }
 
-/* Center the final image when there are 3 images */
+
+/* ---------- THREE-IMAGE LAYOUT ---------- */
 
 .research-figure:last-child:nth-child(3){
     grid-column:1 / -1;
@@ -426,7 +447,8 @@
     width:50%;
 }
 
-/* ---------------- MOBILE GALLERY ---------------- */
+
+/* ---------- MOBILE ---------- */
 
 @media(max-width:768px){
 
